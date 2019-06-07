@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,10 +39,8 @@ namespace ThreadPractice
 
         private void StartMusic()
         {
-            var player = new MediaPlayer();
-            player.Open(new Uri("music.mp3", UriKind.Relative));
-            player.Volume = 1;
-            player.Play();
+            SoundPlayer soundPlayer = new SoundPlayer("music.wav");
+            soundPlayer.Play();
         }
 
         private void SaveText()
